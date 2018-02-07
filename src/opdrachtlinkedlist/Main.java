@@ -1,7 +1,7 @@
 package opdrachtlinkedlist;
 
-import sun.org.mozilla.javascript.internal.ast.ScriptNode;
-
+import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 /**
@@ -9,30 +9,36 @@ import java.util.Scanner;
  */
 public class Main {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private Album album;
 
     public static void main(String[] args) {
-
         Album album1 = new Album("album perfact");
+        album1.addSong("Edwin", "99");
+        album1.addSong("Bart", "77");
 
-        album1.addSong("Wonderful morning", "3:59");
-        album1.addSong("Wonderful morning", "4:78");
-        album1.addSong("Wonderful morning", "5:47");
-        album1.addSong("Wonderful morning", "6:36");
-        album1.addSong("Wonderful morning", "7:25");
-        album1.addSong("Wonderful morning", "8:14");
-
+        LinkedList<String> song = album1.getSong();
+        playList(song);
     }
 
 
-    public static void playList() {
+
+
+
+
+    public static void playList(LinkedList album) {
+
+        Scanner scanner = new Scanner(System.in);
+
         boolean quit = false;
+        boolean goingForward = true;
+
+        ListIterator<String> listIterator = album.listIterator();
+
+        addNewContact();
         startPhone();
         printActions();
 
         while (!quit) {
-
-            System.out.println("\nEnter action: (6 to show available actions)");
             int action = scanner.nextInt();
             scanner.nextLine();
 
@@ -42,24 +48,65 @@ public class Main {
                     quit = true;
                     break;
                 case 1:
-                    mobilePhone.printContacts();
+                    if (listIterator.hasNext()){
+                        System.out.println("Now Playing " + listIterator.next());
+                    }else {
+                        System.out.println("Reached the end of the playlist");
+                    }
                     break;
                 case 2:
                     addNewContact();
                     break;
                 case 3:
-                    updateContact();
+                    if (!goingForward){
+                        if (listIterator.hasNext()){
+                            listIterator.next();
+                        }
+                        goingForward=true;
+                    }
+                    if (listIterator.hasNext()){
+                        System.out.println("Now playing song " + listIterator.next());
+                    }else {
+                        System.out.println("Reached the end of the playlist");
+                    }
                     break;
                 case 4:
-                    removeContact();
-                    break;
+                    //skipBackwardsToAPreviousSong();
                 case 5:
-                    queryContact();
+                    //removeSong();
                     break;
                 case 6:
+                    querySongs();
+                    break;
+                case 7:
                     printActions();
                     break;
             }
         }
+    }
+
+    private static void skipForwardToTheNextsong() {
+
+    }
+
+    private static void querySongs() {
+       // album1.letListAllTheSong();
+    }
+
+    private static void printActions() {
+        System.out.println("---action menu----------" +
+                "");
+    }
+
+    private static void addNewContact() {
+//        System.out.println("Enter song name: ");
+//        String nameSong = scanner.nextLine();
+//        System.out.println("Enter song duration: ");
+//        String duration = scanner.nextLine();
+//        album.addSong(nameSong, duration);
+    }
+
+    private static void startPhone() {
+        System.out.println("Play list started ");
     }
 }
