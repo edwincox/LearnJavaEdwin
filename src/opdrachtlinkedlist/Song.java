@@ -3,12 +3,12 @@ package opdrachtlinkedlist;
 /**
  * Created by CoxEGTPH on 7-2-2018.
  */
-public class Songs {
+public class Song {
 
     private String titel;
     private String duration;
 
-    public Songs(String titel, String duration) {
+    public Song(String titel, String duration) {
         this.titel = titel;
         this.duration = duration;
     }
