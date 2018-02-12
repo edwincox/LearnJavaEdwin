@@ -14,6 +14,11 @@ public class Ford extends Car{
         this.automaticClosedDoors = automaticClosedDoors;
     }
 
+    @Override
+    public void changingGears(int gears) {
+        super.changingGears(gears);
+    }
+
     public int getRuitenwissers() {
         return ruitenwissers;
     }
@@ -25,4 +30,5 @@ public class Ford extends Car{
     public boolean isAutomaticClosedDoors() {
         return automaticClosedDoors;
     }
+
 }

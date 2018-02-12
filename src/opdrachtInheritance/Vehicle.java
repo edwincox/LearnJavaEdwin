@@ -35,7 +35,7 @@ public class Vehicle {
         }
     }
 
-    public void increasingDecreasingSpeed(int speed){
+    private void increasingDecreasingSpeed(int speed){
         this.movingSpeed = speed;
         System.out.println("Speed is " + this.movingSpeed);
 

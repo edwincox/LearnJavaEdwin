@@ -12,5 +12,7 @@ public class Main {
         ford.changingGears(2);
         ford.changingGears(1);
 
+
+
     }
 }
