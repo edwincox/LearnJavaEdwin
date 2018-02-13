@@ -9,11 +9,11 @@ public class House {
     private double woonOpperVlakte;
     private ArrayList<Room> roomsList;
 
-    public House(int windows, int etages, double woonOpperVlakte) {
+    public House(int windows, int etages, double woonOpperVlakte, ArrayList<Room> roomsList) {
         this.windows = windows;
         this.etages = etages;
         this.woonOpperVlakte = woonOpperVlakte;
-        this.roomsList = new ArrayList<Room>();
+        this.roomsList = roomsList;
     }
 
     public void addRoom(Room room){
