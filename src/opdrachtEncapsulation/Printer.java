@@ -26,17 +26,20 @@ public class Printer {
     public void printingPaged(int printen){
         // aantal pagin's printed
 
-        if (printen > 0 & duplexPrinter == false){
-            int geprint = +printen;
+        if (printen > 0 & !duplexPrinter){
+            //int geprint = printen;
             System.out.println("Aantal page printed = " + printen);
-            this.numberPagesPrinted += geprint;
-            this.tonerLevel = this.tonerLevel - 3 * printen;
-        }else if (printen > 0 & duplexPrinter == true){
-            int geprint = printen / 2;
+            this.numberPagesPrinted += printen;
+        }else if (printen > 0 & duplexPrinter){
+
+            //int geprint = printen / 2 +  (printen > 0 ? +1 : +0);
+              int geprint = printen / 2 +  (printen % 2);
+
             System.out.println("Aantal page printed = " + geprint);
             this.numberPagesPrinted += geprint;
-            this.tonerLevel = this.tonerLevel - 1 * printen;
         }
+        this.tonerLevel = this.tonerLevel - (3 * printen);
+
 
     }
 
