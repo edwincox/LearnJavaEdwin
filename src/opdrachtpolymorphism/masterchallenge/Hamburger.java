@@ -9,17 +9,22 @@ public class Hamburger {
     private boolean tomato;
     private boolean carrot;
     private boolean sla;
-
-    private double totalPriceToPay;
+    private double totalPriceToPay = 2.95;
 
     public Hamburger(String breadRollType, boolean meat) {
-        this.breadRollType = breadRollType;
-        if (meat){
-            this.meat = true;
-            this.totalPriceToPay += 1.00;
+        if(breadRollType.trim() == "bread roll" | breadRollType.trim() == "brown rye bread roll" | breadRollType.trim() == "Deluxe Hamburger") {
+            this.breadRollType = breadRollType;
+        }else {
+            this.breadRollType = "Unknow hamburger";
         }
-        this.totalPriceToPay += 2.95;
+
+        if (this.meat = true){
+            this.totalPriceToPay = totalPriceToPay + 1.00;
+        }
+        this.totalPriceToPay = totalPriceToPay;
     }
+
+
 
     public void finalPriceHamburger(){
         System.out.println("Dear customer you have to pay " + getTotalPriceToPay());
@@ -68,6 +73,10 @@ public class Hamburger {
 
     public boolean isSla() {
         return sla;
+    }
+
+    public void addByTotalPrice(double addToPrice){
+        this.totalPriceToPay = this.totalPriceToPay + addToPrice;
     }
 
     public double getTotalPriceToPay() {
