@@ -1,34 +1,39 @@
 package opdrachtpolymorphism.masterchallenge;
 
-public class DeluxeHamburger {
+public class DeluxeHamburger extends Hamburger {
 
     private boolean chips;
     private boolean drinks;
 
-    private Hamburger hamburger;
-
-    public DeluxeHamburger() {
+    public DeluxeHamburger(String breadRollType, boolean meat, boolean chips, boolean drinks) {
+        super(breadRollType, meat, 2.95);
         this.chips = chips;
         this.drinks = drinks;
-        this.hamburger = new Hamburger("Deluxe Hamburger", true);
     }
 
     public void addChips(){
         this.chips = true;
-        hamburger.addByTotalPrice(0.60);
     }
 
     public void addDrinks(){
         this.drinks = true;
-        hamburger.addByTotalPrice(0.60);
     }
 
 
     public void basePriceTotalIs(){
-        System.out.println("Delux -> " + hamburger.getTotalPriceToPay());
-
+        System.out.println("Delux -> " );
     }
 
+    public void whatDitIOrderd(){
+        printOrder();
+    }
 
+    public boolean isChips() {
+        return chips;
+    }
+
+    public boolean isDrinks() {
+        return drinks;
+    }
 
 }

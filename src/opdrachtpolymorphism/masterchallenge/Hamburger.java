@@ -2,84 +2,98 @@ package opdrachtpolymorphism.masterchallenge;
 
 public class Hamburger {
 
+    private static final double SLA_PRICE = 0.20;
+    private static final double LECTTUCE_PRICE = 0.50;
+    private static final double CARROT_PRICE = 0.30;
+    private static final double TOMATO_PRICE = 0.40;
     private String breadRollType;
     private boolean meat;
 
-    private boolean lecttuce;
-    private boolean tomato;
-    private boolean carrot;
-    private boolean sla;
-    private double totalPriceToPay = 2.95;
+    private int numberOfLecttuce;
 
-    public Hamburger(String breadRollType, boolean meat) {
+    private int numberOfTomato;
+    private int numberOfCarrot;
+
+    private int numberOfSla;
+
+    private double price;
+    private double totalPrice = 0;
+
+    public Hamburger(String breadRollType, boolean meat, double price) {
         if(breadRollType.trim() == "bread roll" | breadRollType.trim() == "brown rye bread roll" | breadRollType.trim() == "Deluxe Hamburger") {
             this.breadRollType = breadRollType;
         }else {
             this.breadRollType = "Unknow hamburger";
         }
-
-        if (this.meat = true){
-            this.totalPriceToPay = totalPriceToPay + 1.00;
-        }
-        this.totalPriceToPay = totalPriceToPay;
+        this.meat = meat;
+        this.price = price;
     }
 
-
-
-    public void finalPriceHamburger(){
-        System.out.println("Dear customer you have to pay " + getTotalPriceToPay());
+    public double calculateTotalPrice(){
+        totalPrice = (meat ? 1.21 : 0.00 )+ price + (numberOfSla * SLA_PRICE) + (numberOfLecttuce * LECTTUCE_PRICE) + (numberOfCarrot * CARROT_PRICE) + (numberOfTomato * TOMATO_PRICE);
+        return totalPrice;
     }
-
 
     public void addLecttuce(){
-        this.lecttuce = true;
-        this.totalPriceToPay += 0.50;
+        this.numberOfLecttuce += 1;
     }
 
     public void addTomato(){
-        this.tomato = true;
-        this.totalPriceToPay += 0.50;
+        this.numberOfTomato += 1;
     }
 
     public void addCarrot(){
-        this.carrot = true;
-        this.totalPriceToPay += 0.50;
+        this.numberOfCarrot += 1;
     }
 
     public void addSla(){
-        this.sla = true;
-        this.totalPriceToPay += 0.50;
+        this.numberOfSla += 1;
     }
 
     public String getBreadRollType() {
         return breadRollType;
     }
 
+    public void printOrder(){
+        System.out.println("=====Menu Order=======");
+        printAllOrderd();
+        System.out.println("Total price = " + calculateTotalPrice());
+        System.out.println("======================");
+
+    }
+
+    public void printAllOrderd() {
+        System.out.println("Total sla: " + getNumberOfSla());
+        System.out.println("Total carrot: " + getNumberOfCarrot());
+        System.out.println("Total lecttuce: " + getNumberOfLecttuce());
+        System.out.println("Total tomato: " + getNumberOfTomato());
+    }
+
     public boolean isMeat() {
         return meat;
     }
 
-    public boolean isLecttuce() {
-        return lecttuce;
+    public int getNumberOfLecttuce() {
+        return numberOfLecttuce;
     }
 
-    public boolean isTomato() {
-        return tomato;
+    public int getNumberOfTomato() {
+        return numberOfTomato;
     }
 
-    public boolean isCarrot() {
-        return carrot;
+    public int getNumberOfCarrot() {
+        return numberOfCarrot;
     }
 
-    public boolean isSla() {
-        return sla;
+    public int getNumberOfSla() {
+        return numberOfSla;
     }
 
-    public void addByTotalPrice(double addToPrice){
-        this.totalPriceToPay = this.totalPriceToPay + addToPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public double getTotalPriceToPay() {
-        return totalPriceToPay;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 }
