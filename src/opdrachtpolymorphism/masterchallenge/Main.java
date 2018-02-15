@@ -20,13 +20,10 @@ public class Main {
         hamburger1.addCarrot();
         hamburger1.printOrder();
 
-//        System.out.println("=========================");
-//        DeluxeHamburger deluxeHamburger = new DeluxeHamburger();
-//        deluxeHamburger.addChips();
-//        deluxeHamburger.addDrinks();
-//        deluxeHamburger.basePriceTotalIs();
-//        deluxeHamburger.whatDitIOrderd();
-
+        System.out.println("==========Deluxe Hamburger========");
+        DeluxeHamburger deluxeHamburger = new DeluxeHamburger("", true, 4.95 );
+        deluxeHamburger.printAllOrderd();
+        deluxeHamburger.printOrder();
 
 
     }
