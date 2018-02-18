@@ -10,7 +10,7 @@ public interface ITelephone {
 
     public boolean callPhone(int phoneNumber);
 
-    public boolean isRinging();
+    public boolean isringing();
 
 
 }

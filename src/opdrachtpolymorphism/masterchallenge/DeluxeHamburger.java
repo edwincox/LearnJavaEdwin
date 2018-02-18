@@ -7,6 +7,7 @@ public class DeluxeHamburger extends Hamburger {
 
     public DeluxeHamburger(String breadRollType, boolean meat, double price) {
         super(breadRollType, meat, price);
+        super.calculateTotalPrice();
     }
 
     @Override

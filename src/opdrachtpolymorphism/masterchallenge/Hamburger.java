@@ -63,7 +63,7 @@ public class Hamburger {
     }
 
     public void printAllOrderd() {
-        System.out.println("Total sla: " + getNumberOfSla());
+        System.out.println("Total sla: " +  + getNumberOfSla());
         System.out.println("Total carrot: " + getNumberOfCarrot());
         System.out.println("Total lecttuce: " + getNumberOfLecttuce());
         System.out.println("Total tomato: " + getNumberOfTomato());
@@ -95,5 +95,21 @@ public class Hamburger {
 
     public double getTotalPrice() {
         return totalPrice;
+    }
+
+    public static double getSlaPrice() {
+        return SLA_PRICE;
+    }
+
+    public static double getLecttucePrice() {
+        return LECTTUCE_PRICE;
+    }
+
+    public static double getCarrotPrice() {
+        return CARROT_PRICE;
+    }
+
+    public static double getTomatoPrice() {
+        return TOMATO_PRICE;
     }
 }

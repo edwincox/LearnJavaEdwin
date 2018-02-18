@@ -1,13 +1,11 @@
 package opdrachtinterface.zelf;
 
-/**
- * Created by CoxEGTPH on 8-2-2018.
- */
 public class MobilePhone implements ITelephone {
+
 
     private int myNumber;
     private boolean isRinging;
-    private boolean isOn = false;
+    private boolean isOn =false;
 
     public MobilePhone(int myNumber) {
         this.myNumber = myNumber;
@@ -16,46 +14,40 @@ public class MobilePhone implements ITelephone {
     @Override
     public void powerOn() {
         isOn = true;
-        System.out.println("Mobile phone is powered up ");
+        System.out.println("No action taken, desk phone does not have a power button");
     }
 
     @Override
     public void dial(int phoneNumber) {
         if (isOn){
-            System.out.println("now ringing "+ phoneNumber + " on deskphone");
+            System.out.println("No rining " + phoneNumber + " on deskphone");
         }else {
-            System.out.println("Phone is switch off");
+            System.out.println("Phone is switched off");
         }
-
-
     }
 
     @Override
     public void answer() {
         if (isRinging){
-            System.out.println("Answering the desk phone");
-            isRinging=false;
+            System.out.println("Answering the mobile phone");
+            isRinging =false;
         }
-
     }
 
     @Override
     public boolean callPhone(int phoneNumber) {
         if (phoneNumber == myNumber && isOn){
-            isRinging=true;
-            System.out.println("Meloy ring");
+            isRinging = true;
+            System.out.println("Melody ring");
         }else {
             isRinging = false;
-            System.out.println("Mobile phone is not on or number different");
+            System.out.println("Mobile phone not on or number differnt");
         }
-
         return isRinging;
     }
 
     @Override
-    public boolean isRinging() {
+    public boolean isringing() {
         return isRinging;
     }
-
-
 }

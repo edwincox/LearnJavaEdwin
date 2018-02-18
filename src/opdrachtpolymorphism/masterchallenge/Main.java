@@ -13,17 +13,17 @@ public class Main {
         hamburger.addLecttuce();
         hamburger.printOrder();
 
-        System.out.println("============ Healthyburger =============");
-        Healthyburger hamburger1 = new Healthyburger("brown rye bread roll",true, 3.95);
-        hamburger1.printOrder();
-        hamburger1.addBacon();
-        hamburger1.addCarrot();
-        hamburger1.printOrder();
-
-        System.out.println("==========Deluxe Hamburger========");
-        DeluxeHamburger deluxeHamburger = new DeluxeHamburger("", true, 4.95 );
-        deluxeHamburger.printAllOrderd();
-        deluxeHamburger.printOrder();
+//        System.out.println("============ Healthyburger =============");
+//        Healthyburger hamburger1 = new Healthyburger("brown rye bread roll",true, 3.95);
+//        hamburger1.printOrder();
+//        hamburger1.addBacon();
+//        hamburger1.addCarrot();
+//        hamburger1.printOrder();
+//
+//        System.out.println("==========Deluxe Hamburger========");
+//        DeluxeHamburger deluxeHamburger = new DeluxeHamburger("", true, 4.95 );
+//        deluxeHamburger.printAllOrderd();
+//        deluxeHamburger.printOrder();
 
 
     }

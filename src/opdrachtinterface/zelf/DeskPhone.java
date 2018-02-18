@@ -1,9 +1,7 @@
 package opdrachtinterface.zelf;
 
-/**
- * Created by CoxEGTPH on 8-2-2018.
- */
 public class DeskPhone implements ITelephone {
+
 
     private int myNumber;
     private boolean isRinging;
@@ -14,35 +12,34 @@ public class DeskPhone implements ITelephone {
 
     @Override
     public void powerOn() {
-        System.out.println("No action taken, desk hpone does not have a power button");
+        System.out.println("No action taken, desk phone does not have a power button");
     }
 
     @Override
     public void dial(int phoneNumber) {
-        System.out.println("now ringing "+ phoneNumber + " on deskphone");
-
+        System.out.println("No rining " + phoneNumber + " on deskphone");
     }
 
     @Override
     public void answer() {
-        System.out.println("Answering the desk phone");
-        isRinging=false;
+        if (isRinging){
+            System.out.println("Answering the desk phone");
+        }
     }
 
     @Override
     public boolean callPhone(int phoneNumber) {
         if (phoneNumber == myNumber){
-            isRinging=true;
+            isRinging = true;
             System.out.println("Ring ring");
         }else {
-            isRinging = false;
+            return false;
         }
-
         return isRinging;
     }
 
     @Override
-    public boolean isRinging() {
+    public boolean isringing() {
         return isRinging;
     }
 }
