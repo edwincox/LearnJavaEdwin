@@ -51,5 +51,13 @@ public class Bank {
     }
 
 
-
+    public ArrayList<Klanten> printListAllCustomers() {
+        ArrayList<Klanten> klanten = new ArrayList<>();
+        for (Vestigingen vestiging : vestigingen){
+            for (Klanten klant :  vestiging.getKlanten()){
+                klanten.add(klant);
+            }
+        }
+        return klanten;
+    }
 }

@@ -1,5 +1,7 @@
 package zelfverzonnen;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,6 +20,13 @@ public class Main {
 
         System.out.println("=========Edwin account==========");
         rabobank.whatIsMyBankAccountSaldo(123);
+
+
+        System.out.println("========= Algemeen  ==========");
+        ArrayList<Klanten> klanten = rabobank.printListAllCustomers();
+        for (Klanten klant : klanten){
+            System.out.println("Naam: " + klant.getKlantNaam() + " Bankrekeningnummer: " + klant.getKlantBankrekening());
+        }
 
 
     }
