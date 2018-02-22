@@ -50,6 +50,14 @@ public class Bank {
         return vestigingen;
     }
 
+    public void getAllKlanten(){
+        for (Vestigingen vestiging : vestigingen){
+            ArrayList<Klanten> klanten = vestiging.getKlanten();
+            for (Klanten klanten1 : klanten){
+                System.out.println("Klant naam: " + klanten1.getKlantNaam() + " Rekening: " + klanten1.getKlantBankrekening());
+            }
+        }
+    }
 
     public ArrayList<Klanten> printListAllCustomers() {
         ArrayList<Klanten> klanten = new ArrayList<>();
@@ -59,5 +67,9 @@ public class Bank {
             }
         }
         return klanten;
+    }
+
+    public ArrayList<Vestigingen> printListAllVestigingen() {
+        return getVestigingen();
     }
 }
