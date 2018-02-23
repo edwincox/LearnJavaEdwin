@@ -1,9 +1,6 @@
-package opdrachtlinkedlist;
+package opdrachtlinkedlist.opdrachtzelfuitgevoerd;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
 
 /**
  * Created by CoxEGTPH on 7-2-2018.
